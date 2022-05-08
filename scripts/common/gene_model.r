@@ -94,7 +94,7 @@ gene_model <- function(df, genename = NA, WBID = NA, gene_color = "blue", intron
     }
 }
 
-#save(gene_model,file="../functions/gene_model.Rdata")
+save(gene_model,file="../functions/gene_model.Rdata")
 
 goi_list <- tibble(
   gene='',
