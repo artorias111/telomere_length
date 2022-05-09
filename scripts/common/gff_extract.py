@@ -6,7 +6,7 @@ exon_start=''
 exon_end=''
 numexon=0
 
-a=open("../data/briggsae/gffs/genes/qx_9181.gff3","r") #individual gene gff file expected
+a=open("../data/briggsae/gffs/genes/qx_9181.gff3","r") #individual gene gff file
 for i in a: 
 	if i[0]=='#':
 		continue

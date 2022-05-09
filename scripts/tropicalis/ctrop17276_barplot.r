@@ -14,9 +14,9 @@ load('../processed_data/ct_len_isotype.Rdata')
 
 #variants in notion
 
-#variants : 4633871,4633917,4634192
+#variants : 5337683, 5337741
 
-ctrop <- trop_geno %>% filter(POS==4634192) %>% filter(CHROM=="IV")
+ctrop <- trop_geno %>% filter(POS==5337741) %>% filter(CHROM=="V")
 trop_temp1 <- ctrop %>% pivot_longer(
     cols=!CHROM & !POS & !REF & !ALT,
     names_to = "isotype",
@@ -40,7 +40,7 @@ ctrop_bar <- k %>% mutate(isotype=fct_reorder(isotype,length)) %>%
         geom_bar(stat='identity') +
         theme(axis.text.x = element_blank(),axis.ticks.x = element_blank()) +
         xlab(expression(paste(italic('C. tropicalis')," isotypes")))+
-  ggtitle("IV:4634192")
+  ggtitle("V:5337741")
 
 ctrop_bar
-ggsave("../plots/ctrop9944_barplot3.png",dpi=300,height=4,width = 8, units = "in")
+ggsave("../plots/ctrop17276_barplot2.png",dpi=300,height=4,width = 8, units = "in")
