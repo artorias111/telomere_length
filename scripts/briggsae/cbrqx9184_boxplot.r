@@ -28,6 +28,7 @@ brig_temp <- brig_temp1 %>% inner_join(cb_len_isotype) %>% filter(altref==1) %>%
 
 cbraex5_plot <- brig_temp %>% ggplot(aes(x=POS,y=length,group=POS)) + 
   geom_boxplot() + 
+  theme_bw() +
   #scale_x_continuous(breaks=c(14670406,14672327,14673372,14673503,14673745,14674803,14676169),lim=c(14669282,14679748))+
   scale_x_continuous(lim=c(14797708,14806589))+
   #geom_jitter(color="black", alpha=0.1) + 
