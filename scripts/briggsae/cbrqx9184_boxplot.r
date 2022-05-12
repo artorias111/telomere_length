@@ -27,7 +27,7 @@ brig_temp1 <- cbraex5 %>% pivot_longer(
 brig_temp <- brig_temp1 %>% inner_join(cb_len_isotype) %>% filter(altref==1) %>% dplyr::select(POS,length,isotype)
 
 cbraex5_plot <- brig_temp %>% ggplot(aes(x=POS,y=length,group=POS)) + 
-  geom_boxplot() + 
+  geom_boxplot(width=65) + 
   theme_bw() +
   #scale_x_continuous(breaks=c(14670406,14672327,14673372,14673503,14673745,14674803,14676169),lim=c(14669282,14679748))+
   scale_x_continuous(lim=c(14797708,14806589))+
