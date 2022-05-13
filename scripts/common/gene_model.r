@@ -130,5 +130,5 @@ goi_list <- goi_list %>% add_row(
   type='transcript'
 )
 
-#save(goi_list,file="../processed_data/goi_list.Rdata")
+save(goi_list,file="../processed_data/goi_list.Rdata")
 #what needs to be added: gene, chr, txtstart,txtend,codingstart,codingend,numexons,exonstarts,exonends,

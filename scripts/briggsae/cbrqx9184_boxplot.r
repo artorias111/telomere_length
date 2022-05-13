@@ -47,8 +47,6 @@ p <- plot_grid(cbrqx9184_model,cbraex5_plot,ncol=1, align='v',rel_widths=c(1,1),
 x <- plot_grid(NULL,brig_pop_plot,ncol=1,align='v',rel_widths=c(1,1),rel_heights = c(1,12))
 
 
-
-
 #ggsave("../plots/cbraex5_boxplot.png",dpi=300,height=4,width = 8, units = "in")
 #ggsave("../plots/cbraex5_boxplot_high_impact.png",dpi=300,height=4,width = 8, units = "in")
 
