@@ -94,6 +94,6 @@ man.plot <-  ggplot2::ggplot() +
 
 brig_manplot <- man.plot
 brig_manplot
-ggsave("../plots2/brig_manplot2.png",width=7.5,height=2,units="in",dpi=300)
+ggsave("../plots/brig_manplot2.png",width=7.5,height=2,units="in",dpi=300)
 #save(brig_manplot,file="../processed_data/brig_manplot.Rdata")
 

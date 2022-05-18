@@ -11,11 +11,15 @@ library("ggnewscale")
 library("cowplot")
 
 #load brig geno
+#14850052 to 14855827
+
+
 load('../processed_data/eleg_geno.Rdata')
 load('../processed_data/ce_len_isotype.Rdata')
 load('../processed_data/eleg_fgeno.Rdata')
 
-celpot2 <- eleg_fgeno %>% filter(POS==14524804) %>% filter(CHROM==2)
+#14852419 14852825  14854921
+celpot2 <- eleg_geno %>% filter(POS==14854921) %>% filter(CHROM=="I")
 eleg_temp1 <- celpot2 %>% pivot_longer(
     cols=!CHROM & !POS & !REF & !ALT,
     names_to = "isotype",
@@ -39,7 +43,9 @@ celpot2_bar <- k %>% mutate(isotype=fct_reorder(isotype,length)) %>%
         geom_bar(stat='identity') +
         theme(axis.text.x = element_blank(),axis.ticks.x = element_blank()) +
         xlab(expression(paste(italic('C. elegans')," isotypes")))+
-        ggtitle("I:14524804")
+        ggtitle("I:14854921")
 
 celpot2_bar
-ggsave("../plots/celpot2_barplot_finemapping1.png",dpi=300,height=4,width = 8, units = "in")
+ggsave("../plots/celaex5_barplot3.png",dpi=300,height=4,width = 8, units = "in")
+
+

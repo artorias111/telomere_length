@@ -34,6 +34,7 @@ cbraex5_plot <- brig_temp %>% ggplot(aes(x=POS,y=length,group=POS)) +
   geom_boxplot() + 
   #scale_x_continuous(breaks=c(14670406,14672327,14673372,14673503,14673745,14674803,14676169),lim=c(14669282,14679748))+
   scale_x_continuous(lim=c(15440188,15446390))+
+  theme_bw()+
   #geom_jitter(color="black", alpha=0.1) + 
   #theme(axis.title = element_blank(), legend.position = "none",axis.text.x = element_text(angle = 60, vjust = 1, hjust = 1))+
   theme(axis.title = element_blank(), legend.position = "none")+

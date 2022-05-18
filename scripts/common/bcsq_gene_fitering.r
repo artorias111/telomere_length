@@ -13,7 +13,7 @@ library("cowplot")
 eleg_finemapping <- as_tibble(read.delim("../data/elegans/nemascan_runs/Analysis_Results-20220308/Fine_Mappings/Data/length_II_13272357-15257187_bcsq_genes.tsv"))
 brig_finemapping <- as_tibble(read.delim("../data/briggsae/nemascan_runs/Analysis_Results-20220308/Fine_Mappings/Data/length_I_14312709-15147409_bcsq_genes.tsv"))
 
-e <- eleg_finemapping %>% filter(VARIANT_IMPACT=="HIGH") %>% arrange(desc(VARIANT_LOG10p)) %>% dplyr::select(WBGeneID,VARIANT_LOG10p) %>% distinct()
+e <- eleg_finemapping %>% filter(VARIANT_IMPACT=="HIGH") %>% arrange(desc(VARIANT_LOG10p)) %>% dplyr::select(GENE_NAME,VARIANT_LOG10p) %>% distinct()
 
 b <- brig_finemapping %>% filter(VARIANT_IMPACT=="HIGH") %>% arrange(desc(VARIANT_LOG10p)) %>% dplyr::select(WBGeneID,VARIANT_LOG10p) %>% distinct()
 

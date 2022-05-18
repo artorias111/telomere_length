@@ -15,8 +15,8 @@ load('../processed_data/brig_geno.Rdata')
 load('../processed_data/cb_len_isotype.Rdata')
 load('../processed_data/brig_fgeno.Rdata')
 
-
-cbraex5 <- brig_geno %>% filter(POS==15446045) %>% filter(CHROM=='I')
+#15445432 15446045 15441538 15446023
+cbraex5 <- brig_geno %>% filter(POS==15441538) %>% filter(CHROM=='I')
 brig_temp1 <- cbraex5 %>% pivot_longer(
     cols=!CHROM & !POS & !REF & !ALT,
     names_to = "isotype",
@@ -40,7 +40,7 @@ cbraex_bar <- k %>% mutate(isotype=fct_reorder(isotype,length)) %>%
         geom_bar(stat='identity') +
         theme(axis.text.x = element_blank(),axis.ticks.x = element_blank()) +
         xlab(expression(paste(italic('C. briggsae')," isotypes")))+
-        ggtitle("I:15446045")
+        ggtitle("I:15441538")
 
 cbraex_bar
 ggsave("../plots/cbrqx9296_barplot_1.png",dpi=300,height=4,width = 8, units = "in")

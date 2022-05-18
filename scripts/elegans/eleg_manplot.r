@@ -92,5 +92,5 @@ man.plot <-  ggplot2::ggplot() +
 
 eleg_manplot <- man.plot
 eleg_manplot
-ggsave("../plots2/eleg_manplot2.png",width=7.5,height=2,units="in",dpi=300)
+ggsave("../plots/eleg_manplot2.png",width=7.5,height=2,units="in",dpi=300)
 #save(eleg_manplot,file="../processed_data/eleg_manplot.Rdata")

@@ -19,12 +19,13 @@ trait_name <- "telomere length"
 trop_genes <- read.delim("../data/tropicalis/goi/trop_goi.tsv")
 
 # load independent tests result
-total_independent_tests <- read.table("../data/tropicalis/nemascan_runs/Analysis_Results-20220308/Genotype_Matrix/total_independent_tests.txt", quote="\"", comment.char="", stringsAsFactors=FALSE)
+total_independent_tests <- read.table("../data/tropicalis/nemascan_runs/Analysis_Results-20220517/Genotype_Matrix/total_independent_tests.txt", quote="\"", comment.char="", stringsAsFactors=FALSE)
 
 independent_test_cutoff <- -log10(0.05/total_independent_tests[[1]])
 
 # load processed mapping data. 
-processed_mapping <- read.delim("../data/tropicalis/nemascan_runs/Analysis_Results-20220308/Mapping/Processed/processed_length_AGGREGATE_mapping.tsv", stringsAsFactors=FALSE) %>%
+#processed_mapping <- read.delim("../data/tropicalis/nemascan_runs/Analysis_Results-20220308/Mapping/Processed/processed_length_AGGREGATE_mapping.tsv", stringsAsFactors=FALSE) %>%
+processed_mapping <- read.delim("../data/tropicalis/nemascan_runs/Analysis_Results-20220517/LOCO/Mapping/Processed/processed_length_AGGREGATE_mapping_loco.tsv", stringsAsFactors=FALSE) %>%
   dplyr::mutate(CHROM = factor(CHROM, levels = c("I","II","III","IV","V","X","MtDNA"))) %>%
   dplyr::select(-marker) %>%
   tidyr::unite("marker", CHROM, POS, sep = ":", remove = F)
@@ -50,7 +51,7 @@ BF <- processed_mapping %>%
 BF.frame <- processed_mapping %>%
   dplyr::select(trait) %>%
   dplyr::filter(!duplicated(trait)) %>%
-  dplyr::mutate(BF = BF, EIGEN  = 3)
+  dplyr::mutate(BF = BF, EIGEN  = 4)
 
 for.plot.ann <- for.plot %>%
   dplyr::mutate(sig = case_when(log10p > BF.frame$BF ~ "BF",
@@ -73,7 +74,7 @@ man.plot <-  ggplot2::ggplot() +
                                    y = log10p), 
                                    alpha = 0.5,
                                    size=0.25) +
-  ggplot2::scale_y_continuous(expand = c(0,0), limits = c(0,4.05)) +
+  ggplot2::scale_y_continuous(expand = c(0,0), limits = c(0,5.05)) +
   scale_x_continuous(expand = c(0, 0), breaks = c(5, 10, 15, 20)) +
   ggplot2::geom_point(data = trop_genes, 
                       mapping=aes(x = POS/1000000, 
@@ -95,5 +96,5 @@ man.plot <-  ggplot2::ggplot() +
 
 trop_manplot <- man.plot
 trop_manplot
-ggsave("../plots2/trop_manplot2.png",width=7.5,height=2,units="in",dpi=300)
+ggsave("../plots/trop_manplot2.png",width=7.5,height=2,units="in",dpi=300)
 #save(trop_manplot,file="../processed_data/trop_manplot.Rdata")

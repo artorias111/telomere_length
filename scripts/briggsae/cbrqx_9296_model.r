@@ -16,7 +16,7 @@ load("../functions/gene_model.Rdata")
 load("../processed_data/goi_list.Rdata")
 
 goi_list <- goi_list %>% add_row(
-  gene='qx3794',
+  gene='qx9296',
   chr='I',
   strand='+',
   txstart=15440188,
@@ -32,6 +32,6 @@ goi_list <- goi_list %>% add_row(
   type='transcript'
 )
 
-cbr_model <- gene_model(goi_list,'qx3794')
+cbr_model <- gene_model(goi_list,'qx9296')
 cbr_model
-save(cbr_model,file="../processed_data/cbrqx3794_model.Rdata")
+save(cbr_model,file="../processed_data/cbrqx9296_model.Rdata")
