@@ -21,8 +21,8 @@ bs_plot <- bs_merged %>% ggplot(aes(x=mean_b,y=length))+
   ylab("telomere length")+
   geom_smooth(method="lm")+
   geom_abline(slope=1, intercept = 0)+
-  theme(text = element_text(size=7))
+  theme(text = element_text(size=10))
 bs_plot + stat_cor(method="pearson")
 
-#ggsave("../plots/cel_broodsize_correlation.png",dpi=300,height=4,width = 4, units = "in")
+ggsave("../plots/cel_broodsize_correlation.png",dpi=300,height=4,width = 4, units = "in")
 
