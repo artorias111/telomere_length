@@ -47,7 +47,7 @@ x <- plot_grid(NULL,brig_pop_plot,ncol=1,align='v',rel_widths=c(1,1),rel_heights
 #ggsave("../plots/cbraex5_boxplot.png",dpi=300,height=4,width = 8, units = "in")
 #ggsave("../plots/cbraex5_boxplot_high_impact.png",dpi=300,height=4,width = 8, units = "in")
 
-#q <- plot_grid(p,x,rel_widths = c(3,1))
-#q
+q <- plot_grid(p,x,rel_widths = c(3,1))
+q
 #ggsave("../plots/cbrqx9184_boxplot_highimpact.png",dpi=300,height=4,width = 12, units = "in")
 

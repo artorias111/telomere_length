@@ -18,7 +18,8 @@ load('../processed_data/brig_pop_boxplot.Rdata')
 load('../processed_data/cbrqx9296_model.Rdata') #cbr_model
 
 
-cbraex5 <- brig_geno %>% dplyr::filter(POS>15440188 & POS<15446390) 
+#cbraex5 <- brig_geno %>% dplyr::filter(POS>15440188 & POS<15446390) %>% dplyr::filter(CHROM=="I")
+cbraex5 <- brig_geno %>% dplyr::filter(POS==15445432 | POS==15446045) 
 #cbraex5 <- brig_fgeno %>% filter(POS==14804441 | POS==14798602 | POS==14800045) %>% filter(CHROM==1)
 brig_temp1 <- cbraex5 %>% pivot_longer(
   cols=!CHROM & !POS & !REF & !ALT,

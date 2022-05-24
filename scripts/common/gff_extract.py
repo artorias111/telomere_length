@@ -6,7 +6,7 @@ exon_start=''
 exon_end=''
 numexon=0
 
-a=open("../data/elegans/gffs/genes/celaex5.gff3","r") #individual gene gff file
+a=open("../data/elegans/gffs/genes/daf5.gff3","r") #individual gene gff file
 for i in a: 
 	if i[0]=='#':
 		continue

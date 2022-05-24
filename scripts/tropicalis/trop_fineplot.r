@@ -11,10 +11,14 @@ library("ggnewscale")
 library("cowplot")
 
 
-#C. elegans fine mapping gene plot
+#C. tropicalis fine mapping gene plot
+
+#genes_in_region <- data.table::fread(glue::glue("../data/tropicalis/nemascan_runs/tel.test/LOCO/Fine_Mappings/Data/length_I_817138-2137061_bcsq_genes_loco.tsv"))
+#genes_in_region <- data.table::fread(glue::glue("../data/tropicalis/nemascan_runs/tel.test/LOCO/Fine_Mappings/Data/length_II_10021523-11991609_bcsq_genes_loco.tsv"))
+genes_in_region <- data.table::fread(glue::glue("../data/tropicalis/nemascan_runs/tel.test/LOCO/Fine_Mappings/Data/length_III_1755259-4362098_bcsq_genes_loco.tsv"))
 
 
-genes_in_region <- data.table::fread(glue::glue("../data/tropicalis/nemascan_runs/Analysis_Results-20220308/Fine_Mappings/Data/length_I_775059-2137061_bcsq_genes.tsv"))
+#genes_in_region <- data.table::fread(glue::glue("../data/tropicalis/nemascan_runs/Analysis_Results-20220308/Fine_Mappings/Data/length_I_775059-2137061_bcsq_genes.tsv"))
 #genes_in_region <- data.table::fread(glue::glue("{trait_name}_{QTL_chrom}_{QTL_start}-{QTL_end}_bcsq_genes.tsv"))
     
 gene_df <- genes_in_region %>%
@@ -69,7 +73,7 @@ gene_plot <- ggplot(gene_df) +
         panel.grid = element_blank(),
         text = element_text(size = 7)) 
 gene_plot
-ggsave("../plots/trop_fineplot2.png",dpi=300,height=2,width = 7.5, units = "in")
+ggsave("../plots/trop_fineplot3.png",dpi=300,height=2,width = 7.5, units = "in")
 
 
 ggsave("../plots2/trop_fineplot.png",dpi=300,height=3,width = 7.5, units = "in")
